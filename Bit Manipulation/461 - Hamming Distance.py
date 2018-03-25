@@ -5,23 +5,28 @@ class Solution:
         :type y: int
         :rtype: int
         """
-        a = list(bin(x))
-        b = list(bin(y))
-        del a[1]
-        del b[1]
-        al = len(a)
-        bl = len(b)
-        count = 0
-        if al > bl:
-            for i in range(al - bl):
-                b.insert(0, '0')
-        elif al < bl:
-            for i in range(bl - al):
-                a.insert(0, '0')
+        return bin(x ^ y)[2:].count('1')
 
-        for i in range(len(a)):
-            if a[i] != b[i]:
-                count += 1
+#         a = list(bin(x))
+#         b = list(bin(y))
+#         del a[1]
+#         del b[1]
+#         al = len(a)
+#         bl = len(b)
+#         count = 0
+#         if al>bl:
+#             for i in range(al-bl):
+#                 b.insert(0,'0')
+#         elif al<bl:
+#             for i in range(bl-al):
+#                 a.insert(0,'0')
 
-        return count
+#         for i in range(len(a)):
+#             if a[i] != b[i]:
+#                 count+=1
+
+#         return count
+
+
+
 
